@@ -50,3 +50,16 @@ To run the notebook, open `Height_recognition.ipynb` in Jupyter and run the last
 - The measured value is the image height of the mask's bounding box. It is not a true 3D height and is affected by perspective and camera angle.
 - The contour filter `len(contour) > 5` only removes very small contours.
 - Only the segmentation weights are included; no training code is present.
+
+## Pretrained YOLO weights (not included)
+
+The following off-the-shelf Ultralytics checkpoints were removed from this repository because they are publicly downloadable. The code loads them by name, and Ultralytics downloads them automatically on first use:
+
+- `yolov8n-seg.pt`
+
+```python
+from ultralytics import YOLO
+model = YOLO("yolov8n.pt")  # downloaded automatically if not present
+```
+
+Or download them manually from https://github.com/ultralytics/assets/releases
